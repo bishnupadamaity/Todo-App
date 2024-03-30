@@ -21,6 +21,7 @@ const RegisterForm = () => {
         if (!isLoading && !authUser) {
             router.replace("/");
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [authUser, isLoading]);
 
     const signUpHandler = async () => {

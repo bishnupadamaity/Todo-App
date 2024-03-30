@@ -22,6 +22,7 @@ const LoginForm = () => {
             console.log('go to home page')
             router.replace("/");
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[authUser,isLoading])
     const handleLogin = async () => {
         if (!email || !password) return;

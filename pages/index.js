@@ -15,7 +15,8 @@ export default function Home() {
         if (!isLoading && !authUser) {
             router.replace("/login");
         }
-    }, [authUser, isLoading])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [authUser, isLoading]);
     return (
         <main className="">
             <div className="bg-black text-white w-44 py-4 mt-10 rounded-lg transition-transform hover:bg-black/[0.8] active:scale-90 flex items-center justify-center gap-2 font-medium shadow-md fixed bottom-5 right-5 cursor-pointer"
@@ -46,7 +47,7 @@ export default function Home() {
                 </div>
                 <div className="my-10">
                     {arr.map((todo, index) => (
-                        <div className="flex items-center justify-between mt-4" key={index}>
+                        <div key={index} className="flex items-center justify-between mt-4" >
                             <div className="flex items-center gap-3">
                                 <input
                                     id={`todo-${index}`}
@@ -57,7 +58,7 @@ export default function Home() {
                                     htmlFor={`todo-${index}`}
                                     className="font-medium"
                                 >
-                                    This is my first todo
+                                    This is my {index} todo
                                 </label>
                             </div>
 
