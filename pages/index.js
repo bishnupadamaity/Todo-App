@@ -46,7 +46,7 @@ export default function Home() {
                 </div>
                 <div className="my-10">
                     {arr.map((todo, index) => (
-                        <div className="flex items-center justify-between mt-4">
+                        <div className="flex items-center justify-between mt-4" key={index}>
                             <div className="flex items-center gap-3">
                                 <input
                                     id={`todo-${index}`}
