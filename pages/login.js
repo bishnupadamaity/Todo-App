@@ -28,6 +28,7 @@ const LoginForm = () => {
         if (!email || !password) return;
         try {
             const user = await signInWithEmailAndPassword(auth, email, password);
+            
         } catch (error) {
             console.error(error);
         }
