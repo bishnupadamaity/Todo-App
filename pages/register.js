@@ -18,7 +18,7 @@ const RegisterForm = () => {
     const [password, setPassword] = useState(null);
 
     useEffect(() => {
-        if (!isLoading && !authUser) {
+        if (!isLoading && authUser) {
             router.replace("/");
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -27,7 +27,7 @@ const RegisterForm = () => {
     const signUpHandler = async () => {
         if (!email || !password || !userName) return;
         try {
-            const user = await createUserWithEmailAndPassword(auth, email, password);
+            const {user} = await createUserWithEmailAndPassword(auth, email, password);
             await updateProfile(auth.currentUser, {
                 displayName: userName,
             });
@@ -35,7 +35,7 @@ const RegisterForm = () => {
             setAuthUser({
                 uid: user.uid,
                 email: user.email,
-                username: user.username,
+                userName: user.userName,
                 accessToken: user?.accessToken,
             });
         } catch (error) {

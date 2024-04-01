@@ -103,7 +103,7 @@ export default function Home() {
                     <div className="flex items-center gap-2 mt-10">
                         <input
                             type="text"
-                            placeholder={`👋 Hello name, What to do Today?`}
+                            placeholder={`👋 Hello ${authUser?.userName}, What to do Today?`}
                             className="font-semibold placeholder:text-gray-500 border-[2px] border-black h-[60px] grow shadow-sm rounded-md px-4 focus-visible:outline-yellow-400 text-lg transition-all duration-300"
                             autoFocus
                             value={todoInput}
@@ -119,7 +119,7 @@ export default function Home() {
                 </div>
                 <div className="my-10">
                     { todos.length >0 && todos.map((todo, index) => (
-                        <div key={todo.id} className="flex items-center justify-between mt-4" >
+                        <div key={todo?.id} className="flex items-center justify-between mt-4" >
                             <div className="flex items-center gap-3">
                                 <input
                                     id={`todo-${todo.id}`}

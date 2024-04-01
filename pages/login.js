@@ -81,6 +81,7 @@ const LoginForm = () => {
                             <label>Password</label>
                             <input
                                 type="password"
+                                autoComplete="on"
                                 onChange={(e) => setPassword(e.target.value)}
                                 className="font-medium border-b border-black p-4 outline-0 focus-within:border-blue-400"
                             />
